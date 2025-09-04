@@ -33,11 +33,11 @@ This Arduino sketch enables an ESP32 to connect to a Fardriver controller via Bl
 
 ## Configuration Notes
 
-- **BLE UUID**: The `SERVICE_UUID` and `CHARACTERISTIC_UUID` in the code are the same and must be updated to match your Fardriver controller's BLE configuration. The provided UUID (`0000ffe0-0000-1000-8000-00805f9b34fb`) is a placeholder and may not work with your controller. To obtain the correct UUID:
+- **BLE UUID**: The `SERVICE_UUID` and `CHARACTERISTIC_UUID` in the code must be updated to match your Fardriver controller's BLE configuration. The provided UUID (`0000ffe0-0000-1000-8000-00805f9b34fb`) is a placeholder and may not work with your controller. To obtain the correct UUID:
   1. Download the **nRF Connect** app on your smartphone (available for iOS and Android).
   2. Turn on your Fardriver controller to enable its BLE advertising.
   3. Open nRF Connect, scan for devices, and locate your Fardriver controller in the list.
-  4. Connect to the controller and inspect the available services. Look for a service with properties **NOTIFY**, **READ**, and **WRITE NO RESPONSE**. This service’s UUID is used for both `SERVICE_UUID` and `CHARACTERISTIC_UUID`.
+  4. Connect to the controller and inspect the available services. Look for a service with properties **NOTIFY**, **READ**, and **WRITE NO RESPONSE**. This service’s UUID is used for `CHARACTERISTIC_UUID`.
   5. Copy this UUID into both the `SERVICE_UUID` and `CHARACTERISTIC_UUID` fields in the code.
 - **Wheel Circumference**: The `wheel_circumference_m` (default: 1.416m) must be adjusted to match your vehicle's wheel size for accurate speed calculations. Measure your wheel's circumference or calculate it as `π * diameter` (in meters).
 - **Motor Pole Pairs**: The `motor_pole_pairs` (default: 20) must be set to your motor's pole pair count for accurate RPM-to-speed conversion. Check your motor's specifications.
