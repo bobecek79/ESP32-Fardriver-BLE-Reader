@@ -1,4 +1,4 @@
-# Detailed Description: ESP32 Fardriver BLE Controller Reader
+# ESP32 Fardriver BLE Controller Reader
 
 ## What This Code Does
 
